@@ -10,9 +10,9 @@ def main():
 	[X, y] = read_churn_data()
 	validator = Validator(X, y)
 
-	print("SVM: %.3f" % validator.accuracy(SVC))
-	print("RF: %.3f" % validator.accuracy(RF))
-	print("KNN: %.3f" % validator.accuracy(KNN))
+	validator.performance(SVC)
+	validator.performance(RF)
+	validator.performance(KNN)
 
 def read_churn_data():
 	reader = Reader()
