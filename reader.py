@@ -10,7 +10,7 @@ class Reader:
 		"""
 
 		data_frame = pd.read_csv(file_name)
-		Y = np.where(data_frame['Churn?'] == 'True.', 1, 0)
+		y = np.where(data_frame['Churn?'] == 'True.', 1, 0)
 
 		irrelevant_columns = [
 			'State',   		#doesn't sound relevant
@@ -32,4 +32,4 @@ class Reader:
 		data_frame[yesno_columns] = data_frame[yesno_columns] == "yes"
 
 		X = data_frame.as_matrix().astype(np.float)
-		return X, Y
+		return [X, y]
